@@ -1,0 +1,34 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { background: #ffafbd; background: linear-gradient(to right, #ffc3a0, #ffafbd); overflow-x: hidden; text-align: center; }
+
+.screen { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 1s ease; }
+
+.hidden { display: none; }
+
+.title { font-size: 3rem; color: #d63384; text-shadow: 2px 2px 5px white; margin-bottom: 50px; }
+
+/* 3D Box Animation */
+.box-container { width: 200px; height: 200px; perspective: 1000px; cursor: pointer; }
+
+.box { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; animation: rotateBox 10s infinite linear; }
+
+@keyframes rotateBox {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.face { position: absolute; width: 200px; height: 200px; background: rgba(255, 255, 255, 0.9); border: 2px solid #ff4d6d; line-height: 200px; font-size: 20px; font-weight: bold; color: #ff4d6d; }
+
+.front  { transform: translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.right  { transform: rotateY(90deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.top    { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+/* Page 2 Styling */
+.birthday-pic { width: 250px; border-radius: 50%; border: 5px solid white; margin: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+.wishes { font-size: 1.2rem; color: #444; margin: 20px; max-width: 80%; }
+.video-container { width: 90%; max-width: 500px; margin-top: 20px; }
+.signature { margin-top: 30px; font-style: italic; color: #d63384; }
